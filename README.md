@@ -1,30 +1,6 @@
 ## Virtual Sensors Interface - Web-based Data Collection Methodology
 
-```
-@article{morgul2014virtual,
-  title={Virtual sensors: Web-based real-time data collection methodology for transportation operation performance analysis},
-  author={Morgul, Ender Faruk and Yang, Hong and Kurkcu, Abdullah and Ozbay, Kaan and Bartin, Bekir and Kamga, Camille and Salloum, Richard},
-  journal={Transportation Research Record},
-  volume={2442},
-  number={1},
-  pages={106--116},
-  year={2014},
-  publisher={SAGE Publications Sage CA: Los Angeles, CA}
-}
-```
 
-```
-@article{kurkcu2015extended,
-  title={Extended implementation method for virtual sensors: Web-based real-time transportation data collection and analysis for incident management},
-  author={Kurkcu, Abdullah and Morgul, Ender Faruk and Ozbay, Kaan},
-  journal={Transportation Research Record},
-  volume={2528},
-  number={1},
-  pages={27--37},
-  year={2015},
-  publisher={SAGE Publications Sage CA: Los Angeles, CA}
-}
-```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -94,3 +70,33 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### References
+
+```
+@article{morgul2014virtual,
+  title={Virtual sensors: Web-based real-time data collection methodology for transportation operation performance analysis},
+  author={Morgul, Ender Faruk and Yang, Hong and Kurkcu, Abdullah and Ozbay, Kaan and Bartin, Bekir and Kamga, Camille and Salloum, Richard},
+  journal={Transportation Research Record},
+  volume={2442},
+  number={1},
+  pages={106--116},
+  year={2014},
+  publisher={SAGE Publications Sage CA: Los Angeles, CA}
+}
+```
+
+```
+@article{kurkcu2015extended,
+  title={Extended implementation method for virtual sensors: Web-based real-time transportation data collection and analysis for incident management},
+  author={Kurkcu, Abdullah and Morgul, Ender Faruk and Ozbay, Kaan},
+  journal={Transportation Research Record},
+  volume={2528},
+  number={1},
+  pages={27--37},
+  year={2015},
+  publisher={SAGE Publications Sage CA: Los Angeles, CA}
+}
+```
+
+[![DOI](https://zenodo.org/badge/209391190.svg)](https://zenodo.org/badge/latestdoi/209391190)
