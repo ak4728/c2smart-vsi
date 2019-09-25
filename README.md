@@ -1,4 +1,4 @@
-### Virtual Sensors Interface - Web-based Data Collection Methodology
+## Virtual Sensors Interface - Web-based Data Collection Methodology
 
 ```
 @article{morgul2014virtual,
