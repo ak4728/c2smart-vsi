@@ -13,7 +13,7 @@
 }
 ```
 
-
+```
 @article{kurkcu2015extended,
   title={Extended implementation method for virtual sensors: Web-based real-time transportation data collection and analysis for incident management},
   author={Kurkcu, Abdullah and Morgul, Ender Faruk and Ozbay, Kaan},
@@ -24,6 +24,7 @@
   year={2015},
   publisher={SAGE Publications Sage CA: Los Angeles, CA}
 }
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
