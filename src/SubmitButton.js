@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form } from "antd";
-import { API_URL } from './DataViewMenu.js';
+import { API_URL } from './PipelineMenu.js';
 
 class SubmitButton extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class SubmitButton extends React.Component {
       method: "POST",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/x-www-form-xurlencoded"
       },
       body: JSON.stringify({ APIDetails: this.props.resultData }, function(k, v) { return v === undefined ? null : v; })
     })
@@ -35,7 +35,7 @@ class SubmitButton extends React.Component {
         return response.json();
       })
       .then(function(myJson) {
-        //console.log(JSON.stringify(myJson));
+        console.log(JSON.stringify(myJson));
         if (myJson['result'] === 'success') {
           const pipelineRmBtns = document.getElementsByClassName('pipelineRemove');
           for (let button of pipelineRmBtns) {

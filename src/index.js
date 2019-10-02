@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
 import {
@@ -11,6 +12,9 @@ import {
 import PipelineMenu from './PipelineMenu';
 import SubmitButton from './SubmitButton';
 import DataViewMenu from './DataViewMenu';
+
+import Login from './login/Login';
+
 
 const Panel = Collapse.Panel;
 
@@ -53,8 +57,6 @@ class MainMenu extends React.Component {
     });
   }
 
-    
-  
   removePipelineMenu(id, e) {
     e.preventDefault();
     const newInputList = this.state.inputList.filter(function(el) {
@@ -88,7 +90,7 @@ class MainMenu extends React.Component {
         <br />
         <Collapse bordered={false} defaultActiveKey={['0']}>
           {this.state.inputList.map(id => (
-            <Panel 
+            <Panel
               header=<Icon 
                        type="close" 
                        className='pipelineRemove' 
@@ -110,11 +112,24 @@ class MainMenu extends React.Component {
     );
   }
 }
+export default MainMenu;
 
-ReactDOM.render(
-  <div>
-    <MainMenu />
-  </div>,
-  document.getElementById("container")
-);
+
+const routing = (
+  <Router>
+    <div>
+      <Route exact path = "/" component = {MainMenu}/>
+      <Route path = "/login" component = {Login}/>
+    </div>
+  </Router>
+)
+
+// ReactDOM.render(
+//   <div>
+//     <MainMenu />
+//   </div>,
+//   document.getElementById("container")
+// );
+
+ReactDOM.render(routing, document.getElementById('container'))
 
