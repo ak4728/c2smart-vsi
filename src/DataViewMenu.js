@@ -58,7 +58,7 @@ class DataViewMenu extends React.Component {
 
   render() {
     return (
-      <div className="popuptext" id="data">
+      <div id="data">
         {this.state.inputList}
       </div>
     );
@@ -66,5 +66,4 @@ class DataViewMenu extends React.Component {
 }
 
 export const API_URL = 'http://127.0.0.1:8000/dataView';
-
 export default DataViewMenu;

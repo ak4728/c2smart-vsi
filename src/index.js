@@ -2,134 +2,37 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import "antd/dist/antd.css";
-import "./index.css";
+
+import Login from './login/Login';
+import MainMenu from './home/home';
+// import "./home.css";
 import {
   Button,
   Icon,
   Collapse,
 } from "antd";
 
-import PipelineMenu from './PipelineMenu';
-import SubmitButton from './SubmitButton';
-import DataViewMenu from './DataViewMenu';
+// const Panel = Collapse.Panel;
 
-import Login from './login/Login';
-
-
-const Panel = Collapse.Panel;
-
-class MainMenu extends React.Component {
+class IndexFile extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { 
-      inputList: [], 
-      submit: "", 
-      dataView: false,
-      resultData: [],
-    };
-    this.addPipelineMenu = this.addPipelineMenu.bind(this);
-    this.removePipelineMenu = this.removePipelineMenu.bind(this);
-    this.createDataView = this.createDataView.bind(this);
-    this.emptyIndex = [];
-  }
-  
-  setResultData = (resultData) => {
-    this.setState({
-      resultData: resultData,
-    });
-  }
-
-  addPipelineMenu(e) {
-    const inputList = this.state.inputList;
-    if (this.emptyIndex.length > 0) {
-      inputList.push(this.emptyIndex.pop());
-    } else {
-      inputList.push(inputList.length); //mark as unique id
-    }
-    console.log(inputList);
-    this.setState({
-      dataView: false,
-      inputList: inputList,
-      submit: <SubmitButton 
-                resultData={this.state.resultData}
-                setResultData={this.setResultData}
-              />
-    });
-  }
-
-  removePipelineMenu(id, e) {
-    e.preventDefault();
-    const newInputList = this.state.inputList.filter(function(el) {
-      return el !== id;
-    });
-    this.emptyIndex.push(id);
-    this.setState({
-      inputList: newInputList,
-      submit: newInputList.length > 0 ? <SubmitButton /> : null
-    });
-  }
-
-  createDataView() {
-    this.setState({
-      dataView: true,
-      inputList: [],
-      submit: null,
-      loading: true,
-    });
-  }
-
-  renderDataView() {
-    return (this.state.dataView ? <DataViewMenu key={Math.random().toString()} /> : null);
-  }
-
-  render() {
-    return (
-      <div>
-        <Button onClick={this.addPipelineMenu}>Add a new pipeline</Button>
-        <Button onClick={this.createDataView}>View your data</Button>
-        <br />
-        <Collapse bordered={false} defaultActiveKey={['0']}>
-          {this.state.inputList.map(id => (
-            <Panel
-              header=<Icon 
-                       type="close" 
-                       className='pipelineRemove' 
-                       onClick={(e) => this.removePipelineMenu(id, e)} 
-                     />
-              key={id} 
-            >
-              <PipelineMenu 
-                id={id}
-                resultData={this.state.resultData}
-                setResultData={this.setResultData}
-              />
-            </Panel>
-          ))}
-        </Collapse>
-        {this.renderDataView()}
-        {this.state.submit}
-      </div>
-    );
-  }
+    super(props);}
 }
-export default MainMenu;
 
+ReactDOM.render(
+  <div>
+    <Login />
+  </div>,
+  document.getElementById("container")
+);
 
 const routing = (
-  <Router>
-    <div>
-      <Route exact path = "/" component = {MainMenu}/>
-      <Route path = "/login" component = {Login}/>
-    </div>
-  </Router>
-)
-
-// ReactDOM.render(
-//   <div>
-//     <MainMenu />
-//   </div>,
-//   document.getElementById("container")
-// );
+    <Router>
+      <div>
+        <Route exact path = "/" component = {Login}/>
+        <Route path = "/home" component = {MainMenu}/>
+      </div>
+    </Router>
+  )
 
 ReactDOM.render(routing, document.getElementById('container'))
-
