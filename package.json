@@ -9,6 +9,9 @@
     "react-router-dom": "^5.1.1",
     "react-scripts": "3.1.2"
   },
+  "overrides": {
+    "immutable": "^3.8.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
